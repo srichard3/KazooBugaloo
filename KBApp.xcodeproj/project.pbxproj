@@ -32,6 +32,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E69B9CC295242CE0060FD33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7EAF7C29294E530C009C561A = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +58,7 @@
 		7EAF7C34294E530C009C561A /* KBApp */ = {
 			isa = PBXGroup;
 			children = (
+				7E69B9CC295242CE0060FD33 /* Views */,
 				7EAF7C35294E530C009C561A /* KBAppApp.swift */,
 				7EAF7C37294E530C009C561A /* ContentView.swift */,
 				7EAF7C39294E530E009C561A /* Assets.xcassets */,
