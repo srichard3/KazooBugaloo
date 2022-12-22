@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E69B9D029524B8B0060FD33 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9CF29524B8B0060FD33 /* HomeScreen.swift */; };
+		7E69B9D229524B9F0060FD33 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9D129524B9F0060FD33 /* GameScreen.swift */; };
+		7E69B9D529524C5D0060FD33 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9D429524C5D0060FD33 /* AuthManager.swift */; };
+		7E69B9D729524D880060FD33 /* SignInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9D629524D880060FD33 /* SignInScreen.swift */; };
+		7E69B9DB295386490060FD33 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9DA295386490060FD33 /* WebView.swift */; };
 		7EAF7C36294E530C009C561A /* KBAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7C35294E530C009C561A /* KBAppApp.swift */; };
 		7EAF7C38294E530C009C561A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7C37294E530C009C561A /* ContentView.swift */; };
 		7EAF7C3A294E530E009C561A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF7C39294E530E009C561A /* Assets.xcassets */; };
@@ -14,6 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E69B9CF29524B8B0060FD33 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		7E69B9D129524B9F0060FD33 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
+		7E69B9D429524C5D0060FD33 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		7E69B9D629524D880060FD33 /* SignInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInScreen.swift; sourceTree = "<group>"; };
+		7E69B9DA295386490060FD33 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		7EAF7C32294E530C009C561A /* KBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAF7C35294E530C009C561A /* KBAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBAppApp.swift; sourceTree = "<group>"; };
 		7EAF7C37294E530C009C561A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,8 +45,19 @@
 		7E69B9CC295242CE0060FD33 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7E69B9D129524B9F0060FD33 /* GameScreen.swift */,
+				7E69B9D629524D880060FD33 /* SignInScreen.swift */,
+				7E69B9DA295386490060FD33 /* WebView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7E69B9D329524C4D0060FD33 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				7E69B9D429524C5D0060FD33 /* AuthManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		7EAF7C29294E530C009C561A = {
@@ -58,9 +79,11 @@
 		7EAF7C34294E530C009C561A /* KBApp */ = {
 			isa = PBXGroup;
 			children = (
+				7E69B9D329524C4D0060FD33 /* Managers */,
 				7E69B9CC295242CE0060FD33 /* Views */,
 				7EAF7C35294E530C009C561A /* KBAppApp.swift */,
 				7EAF7C37294E530C009C561A /* ContentView.swift */,
+				7E69B9CF29524B8B0060FD33 /* HomeScreen.swift */,
 				7EAF7C39294E530E009C561A /* Assets.xcassets */,
 				7EAF7C3B294E530E009C561A /* Preview Content */,
 			);
@@ -146,7 +169,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EAF7C38294E530C009C561A /* ContentView.swift in Sources */,
+				7E69B9D229524B9F0060FD33 /* GameScreen.swift in Sources */,
 				7EAF7C36294E530C009C561A /* KBAppApp.swift in Sources */,
+				7E69B9D029524B8B0060FD33 /* HomeScreen.swift in Sources */,
+				7E69B9D529524C5D0060FD33 /* AuthManager.swift in Sources */,
+				7E69B9D729524D880060FD33 /* SignInScreen.swift in Sources */,
+				7E69B9DB295386490060FD33 /* WebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

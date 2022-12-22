@@ -9,9 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomeScreen()
+        if AuthManager.shared.isSignedIn {
+            HomeScreen()
+        } else {
+            SignInScreen()
+            
+        }
+        
     }
+    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
