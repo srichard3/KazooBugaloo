@@ -26,8 +26,7 @@ struct WebView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: WKWebView, context: Context) {
-        // you can access environment via context.environment here
-        // Note that this method will be called A LOT
+        
     }
 
     func onLoadStatusChanged(perform: ((Bool, Error?) -> Void)?) -> some View {
@@ -42,8 +41,9 @@ struct WebView: UIViewRepresentable {
         init(_ parent: WebView) {
             self.parent = parent
         }
-        
-        func webView(_ webView: WKWebView, didStartProvisionalNavigation: WKNavigation!) {
+
+        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+            parent.loadStatusChanged?(true, nil)
             
             guard let url = webView.url else {
                 return
@@ -57,19 +57,15 @@ struct WebView: UIViewRepresentable {
             print("Code: \(code)")
             AuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
                 DispatchQueue.main.async {
-//                    self?.navigationController?.popToRootViewController(animated: true)
-    //                self?.completionHandler?(success)
+//                    self?.completionHandler?(success)
                 }
             }
-        }
-
-        func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-            parent.loadStatusChanged?(true, nil)
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
             parent.title = webView.title ?? ""
             parent.loadStatusChanged?(false, nil)
+            
         }
 
         func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {

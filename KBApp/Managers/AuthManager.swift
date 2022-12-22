@@ -67,7 +67,7 @@ final class AuthManager {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded",
+        request.setValue("application/x-www-form-urlencoded ",
                          forHTTPHeaderField: "Content-Type")
         request.httpBody = components.query?.data(using: .utf8)
         
@@ -79,7 +79,7 @@ final class AuthManager {
             return
         }
         
-        request.setValue("Basic: \(base64String)",
+        request.setValue("Basic \(base64String)",
                          forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -91,6 +91,7 @@ final class AuthManager {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
                 print("SUCCESS: \(json)")
+                completion(true)
             }
             catch {
                 print(error.localizedDescription)
