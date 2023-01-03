@@ -20,6 +20,7 @@
 		7EE7A7AC2954FFA2004B75A6 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7A7AB2954FFA2004B75A6 /* APICaller.swift */; };
 		7EE7A7AF2954FFED004B75A6 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7A7AE2954FFED004B75A6 /* UserProfile.swift */; };
 		7EE7A7B12964B18D004B75A6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7A7B02964B18D004B75A6 /* ProfileView.swift */; };
+		7EE7A7B32964BEBD004B75A6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE7A7B22964BEBD004B75A6 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		7EE7A7AB2954FFA2004B75A6 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		7EE7A7AE2954FFED004B75A6 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		7EE7A7B02964B18D004B75A6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		7EE7A7B22964BEBD004B75A6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				7E69B9D629524D880060FD33 /* SignInScreen.swift */,
 				7E69B9DA295386490060FD33 /* WebView.swift */,
 				7EE7A7B02964B18D004B75A6 /* ProfileView.swift */,
+				7EE7A7B22964BEBD004B75A6 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				7E69B9D529524C5D0060FD33 /* AuthManager.swift in Sources */,
 				7E69B9D729524D880060FD33 /* SignInScreen.swift in Sources */,
 				7E69B9DF2953F4F70060FD33 /* AuthResponse.swift in Sources */,
+				7EE7A7B32964BEBD004B75A6 /* SettingsView.swift in Sources */,
 				7EE7A7B12964B18D004B75A6 /* ProfileView.swift in Sources */,
 				7E69B9DB295386490060FD33 /* WebView.swift in Sources */,
 			);

@@ -11,11 +11,16 @@ struct GameScreen: View {
         NavigationView {
             VStack {
                 Text("*Game Screen*")
-                NavigationLink(destination: ProfileView()) {
-                    Text("Profile")
-                }
+                
             }
         }
+        .navigationBarItems(
+            trailing:
+                NavigationLink(destination: SettingsView())
+                {
+                    Image(systemName: "gear")
+                }
+        )
     }
 }
 
