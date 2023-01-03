@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isLoggedIn: Bool = false
+    @State var refresh: Bool = false
+    
     var body: some View {
-        if AuthManager.shared.isSignedIn {
-            HomeScreen()
-        } else {
-            SignInScreen()
-            
+        return Group {
+                SignInScreen()
         }
         
     }
-    
+
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {

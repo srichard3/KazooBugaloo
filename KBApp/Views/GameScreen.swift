@@ -8,7 +8,14 @@ import SwiftUI
 
 struct GameScreen: View {
     var body: some View {
-        Text("Game Screen")
+        NavigationView {
+            VStack {
+                Text("*Game Screen*")
+                NavigationLink(destination: ProfileView()) {
+                    Text("Profile")
+                }
+            }
+        }
     }
 }
 

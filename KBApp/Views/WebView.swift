@@ -9,6 +9,7 @@ import SwiftUI
 import WebKit
 import UIKit
 
+
 struct WebView: UIViewRepresentable {
     @Binding var title: String
     var url: URL
@@ -52,14 +53,14 @@ struct WebView: UIViewRepresentable {
             guard let code = URLComponents(string: url.absoluteString)?.queryItems?.first(where: { $0.name == "code" })?.value else {
                 return
             }
-    //        webView.isHidden = true
+            webView.isHidden = true
             
             print("Code: \(code)")
-            AuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
+            AuthManager.shared.exchangeCodeForToken(code: code) { success in
                 DispatchQueue.main.async {
-//                    self?.completionHandler?(success)
                 }
             }
+                                    
         }
 
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -77,29 +78,34 @@ struct WebView: UIViewRepresentable {
 struct Display: View {
     @State var title: String = ""
     @State var error: Error? = nil
+    @Binding var isLoggedIn: Bool
 
     var body: some View {
         NavigationView {
             WebView(title: $title, url: AuthManager.shared.signInURL!)
-                .onLoadStatusChanged { loading, error in
-                    if loading {
-                        print("Loading started")
-                        self.title = "Loading…"
-                    }
-                    else {
-                        print("Done loading.")
-                        if let error = error {
-                            self.error = error
-                            if self.title.isEmpty {
-                                self.title = "Error"
+                    .onLoadStatusChanged { loading, error in
+                        if loading {
+                            print("Loading started")
+                            self.title = "Loading…"
+                        }
+                        else {
+                            print("Done loading.")
+                            if let error = error {
+                                self.error = error
+                                if self.title.isEmpty {
+                                    self.title = "Error"
+                                }
+                            }
+                            else if self.title.isEmpty {
+                                self.title = "Some Place"
+                            }
+                            if AuthManager.shared.isSignedIn {
+                                isLoggedIn = true
+                                print("Logged in!")
                             }
                         }
-                        else if self.title.isEmpty {
-                            self.title = "Some Place"
-                        }
                     }
-            }
-            .navigationBarTitle(title)
+                    .navigationBarTitle(title)
         }
     }
 }

@@ -19,28 +19,46 @@ public var completionHandler: ((Bool) -> Void)?
 struct SignInScreen: View {
     @State private var showWebView = false
     @State private var showLoading: Bool = false
-
+    @State var isLoggedIn: Bool = false
+    
     
     var body: some View {
         
         Text("Sign-In Screen")
         
-        Button {
-            showWebView.toggle()
-//            completionHandler = { [weak self] success in
-//                self?.handleSignIn(success: success)
-//            }
-        } label: {
-            Text("Spotify Authentification")
+        if isLoggedIn {
+            NavigationView {
+                VStack {
+                    Text("SIGNED IN")
+                    NavigationLink(destination: HomeScreen()) {
+                        Text("Home")
+                    }
+                }
+            }
+        } else {
+            Button {
+                showWebView.toggle()
+                print("LOGINVAL - \($isLoggedIn)")
+                //            completionHandler = { [weak self] success in
+                //                self?.handleSignIn(success: success)
+                //            }
+            } label: {
+                Text("Spotify Authentification")
+            }
+            .sheet(isPresented: $showWebView) {
+                Display(isLoggedIn: $isLoggedIn)
+            }
         }
-        .sheet(isPresented: $showWebView) {
-            Display()
-        }
+        
         
     }
     
 //    private func handleSignIn(success: Bool) {
+//        guard success else {
+//            return
+//        }
 //
+//        HomeScreen()
 //    }
 }
 
