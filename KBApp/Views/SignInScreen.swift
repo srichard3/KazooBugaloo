@@ -29,9 +29,9 @@ struct SignInScreen: View {
         if isLoggedIn {
             NavigationView {
                 VStack {
-                    Text("SIGNED IN")
+                    Text("You have successfully signed in!")
                     NavigationLink(destination: HomeScreen()) {
-                        Text("Home")
+                        Text("Continue")
                     }
                 }
             }

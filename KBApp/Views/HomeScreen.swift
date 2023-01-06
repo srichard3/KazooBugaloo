@@ -10,9 +10,9 @@ import SwiftUI
 struct HomeScreen: View {
     var body: some View {
             VStack {
-                Text("Game")
+                Text("Welcome to Home")
                 NavigationLink(destination: GameScreen()) {
-                    Text("Game")
+                    Text("Play Game")
                 }
             }
     }

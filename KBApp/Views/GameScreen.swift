@@ -13,6 +13,10 @@ struct GameScreen: View {
                 Text("*Game Screen*")
                 
             }
+            .onAppear {
+                fetchData()
+                AuthManager.shared.refreshIfNeeded(completion: nil)
+            }
         }
         .navigationBarItems(
             trailing:
@@ -21,6 +25,12 @@ struct GameScreen: View {
                     Image(systemName: "gear")
                 }
         )
+    }
+    
+    private func fetchData() {
+        APICaller.shared.getFeaturedPlaylists { _ in
+            
+        }
     }
 }
 
