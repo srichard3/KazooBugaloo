@@ -24,7 +24,6 @@ struct SignInScreen: View {
     
     var body: some View {
         
-        Text("Sign-In Screen")
         
         if isLoggedIn {
             NavigationView {
@@ -32,10 +31,19 @@ struct SignInScreen: View {
                     Text("You have successfully signed in!")
                     NavigationLink(destination: HomeScreen()) {
                         Text("Continue")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: 250, maxHeight: 70)
+                            .background(.gray)
+                            .cornerRadius(20)
+                            .padding()
                     }
                 }
             }
         } else {
+            
+            //Text("Sign-In Screen")
+            
             Button {
                 showWebView.toggle()
                 print("LOGINVAL - \($isLoggedIn)")
@@ -44,6 +52,12 @@ struct SignInScreen: View {
                 //            }
             } label: {
                 Text("Spotify Authentification")
+                    .font(.title2)
+                    .foregroundColor(.white)
+                    .frame(maxWidth: 300, maxHeight: 80)
+                    .background(.gray)
+                    .cornerRadius(20)
+                    .padding()
             }
             .sheet(isPresented: $showWebView) {
                 Display(isLoggedIn: $isLoggedIn)
