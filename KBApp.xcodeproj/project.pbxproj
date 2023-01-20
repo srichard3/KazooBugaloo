@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E3EC3C729790310004D9943 /* UserPlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3EC3C629790310004D9943 /* UserPlaylistResponse.swift */; };
 		7E69B9D029524B8B0060FD33 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9CF29524B8B0060FD33 /* HomeScreen.swift */; };
 		7E69B9D229524B9F0060FD33 /* GameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9D129524B9F0060FD33 /* GameScreen.swift */; };
 		7E69B9D529524C5D0060FD33 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E69B9D429524C5D0060FD33 /* AuthManager.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E3EC3C629790310004D9943 /* UserPlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPlaylistResponse.swift; sourceTree = "<group>"; };
 		7E69B9CF29524B8B0060FD33 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		7E69B9D129524B9F0060FD33 /* GameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScreen.swift; sourceTree = "<group>"; };
 		7E69B9D429524C5D0060FD33 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				7EE035AE297612050090BB19 /* PlaylistTrackCellModel.swift */,
 				7E88B15C2968EED70048AEFE /* PlaylistResponse.swift */,
 				7E88B15E2968F0330048AEFE /* AlbumResponse.swift */,
+				7E3EC3C629790310004D9943 /* UserPlaylistResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				7EE7A7AF2954FFED004B75A6 /* UserProfile.swift in Sources */,
 				7EE035AF297612050090BB19 /* PlaylistTrackCellModel.swift in Sources */,
 				7E88B1522968B9D80048AEFE /* Album.swift in Sources */,
+				7E3EC3C729790310004D9943 /* UserPlaylistResponse.swift in Sources */,
 				7EAF7C36294E530C009C561A /* KBAppApp.swift in Sources */,
 				7E88B15F2968F0330048AEFE /* AlbumResponse.swift in Sources */,
 				7E69B9D029524B8B0060FD33 /* HomeScreen.swift in Sources */,
@@ -331,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -385,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -23,6 +23,7 @@ struct PlaylistView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 220, maxHeight: 220)
                         .padding()
+                        .shadow(color: .gray, radius: 8)
                         //.cornerRadius(15)
                 } placeholder: {
                     ProgressView()
@@ -32,9 +33,12 @@ struct PlaylistView: View {
                     Text(model.name)
                         .font(.title)
                         .bold()
+                        .frame(alignment: .leading)
                     Text(description)
-                        .font(.subheadline)
+                        .font(.footnote)
                         .italic()
+                        .foregroundColor(.gray)
+                        .frame(alignment: .leading)
                 }
                                                 
             
@@ -46,16 +50,17 @@ struct PlaylistView: View {
                             AsyncImage(url: model.artworkURL) { image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 35, maxHeight: 35)
+                                    .frame(maxWidth: 40, maxHeight: 40)
                             } placeholder: {
                                 ProgressView()
                             }
                             
                             
-                            VStack() {
+                            VStack(alignment: .leading) {
                                 Text(model.name)
                                     //.font(.subheadline)
                                     .bold()
+                                    .frame(alignment: .leading)
                                 Text(model.artistName)
                                     //.font(.caption)
                             }

@@ -10,12 +10,17 @@ import SwiftUI
 struct HomeScreen: View {
     var body: some View {
             VStack {
-                
-                Image("logo")
-                    .frame(maxWidth: 270, maxHeight: 450)
-                    .padding()
                 Spacer()
+                Image("logo")
+                    .resizable()
+                    .frame(maxWidth: 350, maxHeight: 350)
+                    .animation(
+                        .easeInOut(duration: 1)
+                            .repeatForever(autoreverses: true)
+                    )
+                    .padding()
                 
+                Spacer()
                 
                 NavigationLink(destination: GameScreen()) {
                     Text("Play Game")
@@ -25,8 +30,9 @@ struct HomeScreen: View {
                         .background(.red)
                         .cornerRadius(20)
                         .padding()
+                        
                 }.navigationBarBackButtonHidden(true)
-                
+
                 Spacer()
             }
     }

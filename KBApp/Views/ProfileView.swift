@@ -43,6 +43,7 @@ struct ProfileView: View {
     private func updateUI(with model: UserProfile) {
         models.append(model.display_name)
         models.append(model.images.first?.url ?? "")
+        models.append(model.id)
     }
     
     private func fetchProfile() {
@@ -59,6 +60,7 @@ struct ProfileView: View {
                 }
             }
         }
+        
     }
     
 }
