@@ -80,7 +80,7 @@ struct PlaylistView: View {
             
         }.navigationBarItems(
             trailing:
-                NavigationLink(destination: PlayGameView()) {
+                NavigationLink(destination: PreGameView(trackModel: trackModel)) {
                     Text("Play Game!")
                         .font(.subheadline)
                         .bold()
@@ -105,6 +105,7 @@ struct PlaylistView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
+                    print(model)
                     updateUI(with: model)
                     break
                 case .failure(let error):

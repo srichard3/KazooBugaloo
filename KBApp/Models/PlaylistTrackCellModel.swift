@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PlaylistTrackCellModel: Identifiable {    
+struct PlaylistTrackCellModel: Identifiable, Equatable {    
     let name: String
     let id: String
     let artistName: String

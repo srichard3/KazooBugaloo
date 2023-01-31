@@ -117,7 +117,7 @@ struct GameScreen: View {
             {
                 Image(systemName: "gear")
             }
-        ).navigationTitle("")
+        ).navigationTitle("Select a Playlist")
     }
     }
     
@@ -132,7 +132,6 @@ struct GameScreen: View {
     
     private func updateUserPlaylists(with model: UserPlaylistResponse) {
         
-        print("BOOM")
         userPlaylists = model.items
         userPlaylistModel = model.items.compactMap({
             return FeaturedPlaylistCellModel(name: $0.name, id: $0.id, artworkURL: URL(string: $0.images.first?.url ?? ""))
@@ -146,6 +145,7 @@ struct GameScreen: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
+                    print(model)
                     updateUI(with: model)
                     break
                 case .failure(let error):
@@ -157,12 +157,10 @@ struct GameScreen: View {
     }
     
     private func fetchUserPlaylists() {
-        print("BOOM")
         APICaller.shared.getUserPlaylists { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    print(model)
                     updateUserPlaylists(with: model)
                     break
                 case .failure(let error):
