@@ -55,7 +55,7 @@ struct WebView: UIViewRepresentable {
             }
             webView.isHidden = true
             
-            print("Code: \(code)")
+            //print("Code: \(code)")
             AuthManager.shared.exchangeCodeForToken(code: code) { success in
                 DispatchQueue.main.async {
                 }

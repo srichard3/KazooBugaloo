@@ -28,12 +28,13 @@
 		7E88B15D2968EED70048AEFE /* PlaylistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E88B15C2968EED70048AEFE /* PlaylistResponse.swift */; };
 		7E88B15F2968F0330048AEFE /* AlbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E88B15E2968F0330048AEFE /* AlbumResponse.swift */; };
 		7EADA8A6298895E500F22C2B /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA8A5298895E500F22C2B /* CircularProgressView.swift */; };
+		7EADA8A82989D84A00F22C2B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA8A72989D84A00F22C2B /* Player.swift */; };
+		7EADA8AA2989D88800F22C2B /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EADA8A92989D88800F22C2B /* Team.swift */; };
 		7EAF7C36294E530C009C561A /* KBAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7C35294E530C009C561A /* KBAppApp.swift */; };
 		7EAF7C38294E530C009C561A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EAF7C37294E530C009C561A /* ContentView.swift */; };
 		7EAF7C3A294E530E009C561A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF7C39294E530E009C561A /* Assets.xcassets */; };
 		7EAF7C3D294E530E009C561A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EAF7C3C294E530E009C561A /* Preview Assets.xcassets */; };
 		7EC43C2C297A777400A59BE5 /* PreGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC43C2B297A777400A59BE5 /* PreGameView.swift */; };
-		7EC43C2E297A778C00A59BE5 /* GameOverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC43C2D297A778C00A59BE5 /* GameOverView.swift */; };
 		7EC43C30297A780300A59BE5 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC43C2F297A780300A59BE5 /* HowToPlayView.swift */; };
 		7EE035AF297612050090BB19 /* PlaylistTrackCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE035AE297612050090BB19 /* PlaylistTrackCellModel.swift */; };
 		7EE035B1297620FB0090BB19 /* PlayGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE035B0297620FB0090BB19 /* PlayGameView.swift */; };
@@ -65,14 +66,16 @@
 		7E88B15C2968EED70048AEFE /* PlaylistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistResponse.swift; sourceTree = "<group>"; };
 		7E88B15E2968F0330048AEFE /* AlbumResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumResponse.swift; sourceTree = "<group>"; };
 		7EADA8A5298895E500F22C2B /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		7EADA8A72989D84A00F22C2B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		7EADA8A92989D88800F22C2B /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		7EAF7C32294E530C009C561A /* KBApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EAF7C35294E530C009C561A /* KBAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KBAppApp.swift; sourceTree = "<group>"; };
 		7EAF7C37294E530C009C561A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7EAF7C39294E530E009C561A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EAF7C3C294E530E009C561A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7EC43C2B297A777400A59BE5 /* PreGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreGameView.swift; sourceTree = "<group>"; };
-		7EC43C2D297A778C00A59BE5 /* GameOverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverView.swift; sourceTree = "<group>"; };
 		7EC43C2F297A780300A59BE5 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		7ED8899C29B2F5B7007A177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7EE035AE297612050090BB19 /* PlaylistTrackCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistTrackCellModel.swift; sourceTree = "<group>"; };
 		7EE035B0297620FB0090BB19 /* PlayGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayGameView.swift; sourceTree = "<group>"; };
 		7EE7A7AB2954FFA2004B75A6 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
@@ -136,6 +139,8 @@
 				7E88B1512968B9D80048AEFE /* Album.swift */,
 				7E88B149296782FE0048AEFE /* Artist.swift */,
 				7E88B14F2968B9D10048AEFE /* Playlist.swift */,
+				7EADA8A72989D84A00F22C2B /* Player.swift */,
+				7EADA8A92989D88800F22C2B /* Team.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 		7EAF7C34294E530C009C561A /* KBApp */ = {
 			isa = PBXGroup;
 			children = (
+				7ED8899C29B2F5B7007A177C /* Info.plist */,
 				7EAF7C35294E530C009C561A /* KBAppApp.swift */,
 				7EAF7C37294E530C009C561A /* ContentView.swift */,
 				7EE7A7AD2954FFD6004B75A6 /* Models */,
@@ -199,7 +205,6 @@
 			children = (
 				7EC43C2B297A777400A59BE5 /* PreGameView.swift */,
 				7EE035B0297620FB0090BB19 /* PlayGameView.swift */,
-				7EC43C2D297A778C00A59BE5 /* GameOverView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -309,9 +314,9 @@
 				7E88B15F2968F0330048AEFE /* AlbumResponse.swift in Sources */,
 				7EADA8A6298895E500F22C2B /* CircularProgressView.swift in Sources */,
 				7E69B9D029524B8B0060FD33 /* HomeScreen.swift in Sources */,
-				7EC43C2E297A778C00A59BE5 /* GameOverView.swift in Sources */,
 				7EE7A7AC2954FFA2004B75A6 /* APICaller.swift in Sources */,
 				7E88B14A296782FE0048AEFE /* Artist.swift in Sources */,
+				7EADA8A82989D84A00F22C2B /* Player.swift in Sources */,
 				7EE035B1297620FB0090BB19 /* PlayGameView.swift in Sources */,
 				7E88B148296782B80048AEFE /* UserImage.swift in Sources */,
 				7E69B9D529524C5D0060FD33 /* AuthManager.swift in Sources */,
@@ -321,6 +326,7 @@
 				7E88B14C296785530048AEFE /* FeaturedPlaylistResponse.swift in Sources */,
 				7EE7A7B32964BEBD004B75A6 /* SettingsView.swift in Sources */,
 				7EE7A7B12964B18D004B75A6 /* ProfileView.swift in Sources */,
+				7EADA8AA2989D88800F22C2B /* Team.swift in Sources */,
 				7E88B1552968C0790048AEFE /* FeaturedPlaylistCellModel.swift in Sources */,
 				7E69B9DB295386490060FD33 /* WebView.swift in Sources */,
 			);
@@ -454,7 +460,9 @@
 				DEVELOPMENT_TEAM = 54C56N7XB2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = KBApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kazoo Bugaloo";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -465,6 +473,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samrichard.KBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -484,7 +493,9 @@
 				DEVELOPMENT_TEAM = 54C56N7XB2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = KBApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Kazoo Bugaloo";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
@@ -495,6 +506,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.samrichard.KBApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

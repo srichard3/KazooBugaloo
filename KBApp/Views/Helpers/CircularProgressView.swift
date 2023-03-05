@@ -18,19 +18,19 @@ struct CircularProgressView: View {
                     Color(.systemGray3).opacity(0.5),
                     lineWidth: 8
                 )
-                .frame(width: 290, height: 290)
+                .frame(width: 300, height: 300)
             Circle()
                 .trim(from: 0, to: progress)
                 .stroke(
-                    Color.white,
+                    shadowColor,
                     style: StrokeStyle(
                         lineWidth: 8,
                         lineCap: .round
                     )
                 )
                 .rotationEffect(.degrees(-90))
-                .frame(width: 290, height: 290)
-                .shadow(color: shadowColor, radius: 5)
+                .frame(width: 300, height: 300)
+                .shadow(color: shadowColor, radius: 10)
                 .animation(.easeOut, value: progress)
 
         }

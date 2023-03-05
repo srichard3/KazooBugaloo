@@ -26,9 +26,13 @@ struct SignInScreen: View {
         
         
         if isLoggedIn {
+//            NavigationView {
+//                HomeScreen()
+//            }
             NavigationView {
                 VStack {
                     Text("You have successfully signed in!")
+                        .italic()
                     NavigationLink(destination: HomeScreen()) {
                         Text("Continue")
                             .font(.title)

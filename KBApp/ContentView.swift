@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+extension Color {
+    static let ui = Color.UI()
+                                             
+    struct UI {
+        let blue = Color("lightBlue")
+        let lightGray = Color("lightGray")
+        let newBlue = Color("newBlue")
+    }
+}
+
 struct ContentView: View {
     @State var isLoggedIn: Bool = false
     @State var refresh: Bool = false

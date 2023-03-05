@@ -11,6 +11,7 @@ struct GameScreen: View {
     @State private var featuredModel = [FeaturedPlaylistCellModel]()
     @State private var userPlaylistModel = [FeaturedPlaylistCellModel]()
     @State private var userPlaylists = [Playlist]()
+    @State private var KBModel = [FeaturedPlaylistCellModel]()
     @State private var userModel = [String]()
     
     
@@ -20,7 +21,43 @@ struct GameScreen: View {
             
             VStack(alignment: .leading) {
                 
-                Text("**Spotify Featured Playlists**").font(.title2).padding()
+                Text("**Kazoo Bugaloo Playlists**").font(.title2).foregroundColor(Color.ui.blue).padding(.top)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    
+                    HStack(spacing: 20) {
+                        
+                        Spacer()
+                        
+                        ForEach(KBModel) { model in
+                            VStack(alignment: .leading) {
+
+                                NavigationLink(destination: PlaylistView(model: model)) {
+
+                                    AsyncImage(url: model.artworkURL) { image in
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(maxWidth: 200, maxHeight: 200)
+                                            .cornerRadius(15)
+                                    } placeholder: {
+                                        ProgressView()
+                                    }
+
+                                }
+
+                                Text(" " + model.name)
+                                    .font(.footnote)
+
+                                Spacer()
+
+                            }
+                        }
+                    }
+                }
+                
+                Spacer()
+                
+                Text("**Spotify Featured Playlists**").font(.title2).foregroundColor(Color.ui.blue).padding(.top)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     
@@ -38,6 +75,8 @@ struct GameScreen: View {
                                             .aspectRatio(contentMode: .fit)
                                             .frame(maxWidth: 200, maxHeight: 200)
                                             .cornerRadius(15)
+                                            .shadow(color: .white, radius: 5)
+                                            .padding(.top)
                                     } placeholder: {
                                         ProgressView()
                                     }
@@ -46,6 +85,7 @@ struct GameScreen: View {
                                 
                                 Text(" " + model.name)
                                     .font(.footnote)
+                                    .foregroundColor(.white)
                                 
                                 Spacer()
                                 
@@ -56,7 +96,7 @@ struct GameScreen: View {
                 
                 Spacer()
                 
-                Text("**Your Playlists**").font(.title2).padding()
+                Text("**Your Playlists**").font(.title2).foregroundColor(Color.ui.blue).padding()
                 
                 VStack(alignment: .leading, spacing: 2.5) {
                                         
@@ -75,6 +115,7 @@ struct GameScreen: View {
                                     image.resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(maxWidth: 35, maxHeight: 35)
+                                        .shadow(color: .white, radius: 3)
                                 } placeholder: {
                                     ProgressView()
                                 }
@@ -85,21 +126,21 @@ struct GameScreen: View {
                                     Text(model.name)
                                         .font(.callout)
                                         .bold()
-                                        .foregroundColor(.black)
                                         .frame(maxWidth: 250, maxHeight: 15, alignment: .leading)
                                         .truncationMode(.tail)
+                                        .foregroundColor(.white)
                                     Text(model.owner.display_name)
                                         .font(.caption2)
-                                        //.italic()
-                                        .foregroundColor(.black)
+                                        .foregroundColor(.white)
+                                        .italic()
                                     
-                                }
+                                }.padding(.leading)
                                 
                                 Spacer()
                                 
                             }
                             .padding()
-                            .background(Color.gray.opacity(0.2))
+                            .background(Color(.systemGray2).opacity(0.2))
                         }
                         
                         Spacer()
@@ -110,8 +151,10 @@ struct GameScreen: View {
         }.onAppear {
             fetchData()
             fetchUserPlaylists()
+            fetchKBData()
             AuthManager.shared.refreshIfNeeded(completion: nil)
         }.navigationBarItems(
+            
             trailing:
                 NavigationLink(destination: SettingsView())
             {
@@ -145,7 +188,6 @@ struct GameScreen: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    print(model)
                     updateUI(with: model)
                     break
                 case .failure(let error):
@@ -168,6 +210,61 @@ struct GameScreen: View {
                 }
             }
         }
+    }
+    
+    private func fetchKBData() {
+        KBModel.removeAll()
+        APICaller.shared.getPlaylistDetails(for: KB_HIP_PLAYLIST_ID) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    updateKBModel(with: model)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+        APICaller.shared.getPlaylistDetails(for: KB_POP_PLAYLIST_ID) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    updateKBModel(with: model)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+        APICaller.shared.getPlaylistDetails(for: KB_ROCK_PLAYLIST_ID) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    updateKBModel(with: model)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+        APICaller.shared.getPlaylistDetails(for: KB_PLAYLIST_ID) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    updateKBModel(with: model)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    private func updateKBModel(with model: PlaylistDetailsResponse) {
+        KBModel.append(FeaturedPlaylistCellModel(name: model.name, id: model.id, artworkURL: URL(string: model.images.first?.url ?? "")))
     }
     
 }

@@ -23,8 +23,8 @@ struct PlaylistView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 220, maxHeight: 220)
                         .padding()
-                        .shadow(color: .gray, radius: 8)
-                        //.cornerRadius(15)
+                        .shadow(color: .white, radius: 8)
+                        .cornerRadius(15)
                 } placeholder: {
                     ProgressView()
                 }
@@ -51,6 +51,7 @@ struct PlaylistView: View {
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(maxWidth: 40, maxHeight: 40)
+                                    .shadow(color: .white, radius: 3)
                             } placeholder: {
                                 ProgressView()
                             }
@@ -58,11 +59,11 @@ struct PlaylistView: View {
                             
                             VStack(alignment: .leading) {
                                 Text(model.name)
-                                    //.font(.subheadline)
+                                    .font(.subheadline)
                                     .bold()
                                     .frame(alignment: .leading)
                                 Text(model.artistName)
-                                    //.font(.caption)
+                                    .font(.caption)
                             }
                             
                             Spacer()
@@ -84,12 +85,12 @@ struct PlaylistView: View {
                     Text("Play Game!")
                         .font(.subheadline)
                         .bold()
-                        .foregroundColor(.white)
+                        .foregroundColor(.black)
                         .frame(width: 100, height: 35)
-                        .background(.blue)
+                        .background(Color.ui.blue)
                         .cornerRadius(5)
-                }
-        )//.navigationTitle(model.name)
+                }.shadow(color: Color.ui.blue, radius: 5)
+        )
     }
     
     private func updateUI(with model: PlaylistDetailsResponse) {
@@ -105,7 +106,6 @@ struct PlaylistView: View {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    print(model)
                     updateUI(with: model)
                     break
                 case .failure(let error):
