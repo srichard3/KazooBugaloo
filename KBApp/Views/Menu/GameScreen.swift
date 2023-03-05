@@ -12,6 +12,7 @@ struct GameScreen: View {
     @State private var userPlaylistModel = [FeaturedPlaylistCellModel]()
     @State private var userPlaylists = [Playlist]()
     @State private var KBModel = [FeaturedPlaylistCellModel]()
+    @State private var KBPlaylist = FeaturedPlaylistCellModel(name: "", id: "", artworkURL: URL(string: ""))
     @State private var userModel = [String]()
     
     
@@ -28,6 +29,28 @@ struct GameScreen: View {
                     HStack(spacing: 20) {
                         
                         Spacer()
+                        
+                        VStack(alignment: .leading) {
+
+                            NavigationLink(destination: PlaylistView(model: KBPlaylist)) {
+
+                                AsyncImage(url: KBPlaylist.artworkURL) { image in
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(maxWidth: 200, maxHeight: 200)
+                                        .cornerRadius(15)
+                                } placeholder: {
+                                    ProgressView()
+                                }
+
+                            }
+
+                            Text(" " + KBPlaylist.name)
+                                .font(.footnote)
+
+                            Spacer()
+
+                        }
                         
                         ForEach(KBModel) { model in
                             VStack(alignment: .leading) {
@@ -214,6 +237,18 @@ struct GameScreen: View {
     
     private func fetchKBData() {
         KBModel.removeAll()
+        APICaller.shared.getPlaylistDetails(for: KB_ROCK_PLAYLIST_ID) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    updateKBModel(with: model)
+                    break
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
         APICaller.shared.getPlaylistDetails(for: KB_HIP_PLAYLIST_ID) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -238,23 +273,11 @@ struct GameScreen: View {
             }
         }
         
-        APICaller.shared.getPlaylistDetails(for: KB_ROCK_PLAYLIST_ID) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let model):
-                    updateKBModel(with: model)
-                    break
-                case .failure(let error):
-                    print(error.localizedDescription)
-                }
-            }
-        }
-        
         APICaller.shared.getPlaylistDetails(for: KB_PLAYLIST_ID) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    updateKBModel(with: model)
+                    updateKBPlaylist(with: model)
                     break
                 case .failure(let error):
                     print(error.localizedDescription)
@@ -262,7 +285,9 @@ struct GameScreen: View {
             }
         }
     }
-    
+    private func updateKBPlaylist(with model: PlaylistDetailsResponse) {
+        KBPlaylist = FeaturedPlaylistCellModel(name: model.name, id: model.id, artworkURL: URL(string: model.images.first?.url ?? ""))
+    }
     private func updateKBModel(with model: PlaylistDetailsResponse) {
         KBModel.append(FeaturedPlaylistCellModel(name: model.name, id: model.id, artworkURL: URL(string: model.images.first?.url ?? "")))
     }
